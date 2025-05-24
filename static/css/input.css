@@ -1,24 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Import Atomic Design CSS partials */
+/* Atoms */
 @import './atoms/_buttons.css';
 @import './atoms/_typography.css';
 @import './atoms/_forms.css';
 
+/* Molecules */
 @import './molecules/_cards.css';
 @import './molecules/_navigation.css';
 @import './molecules/_search.css';
 @import './molecules/_form-fields.css';
 
+/* Organisms */
 @import './organisms/_header.css';
 @import './organisms/_footer.css';
 @import './organisms/_sidebar.css';
 
+/* Templates */
 @import './templates/_page-layouts.css';
 @import './templates/_grid.css';
 
+/* Pages */
 @import './pages/_home.css';
 @import './pages/_article.css';
 @import './pages/_contact.css';
