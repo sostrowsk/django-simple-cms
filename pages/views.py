@@ -1,7 +1,17 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.db.models import Q
 from .models import Page, Category, Tag
+
+
+class LandingPageView(TemplateView):
+    template_name = 'pages/landing.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['recent_pages'] = Page.objects.filter(is_published=True)[:5]
+        return context
 
 
 class PageListView(ListView):

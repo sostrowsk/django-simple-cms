@@ -1,0 +1,69 @@
+<footer class="bg-brand-dark text-brand-light pt-12">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
+            <div class="lg:col-span-1">
+                <a href="{{ url('pages:home') }}" class="logo mb-6 inline-block">
+                    <img class="h-12" src="{{ static('img/logo.svg') }}" alt="Tina Kylau Logo">
+                </a>
+                <div class="address text-sm">
+                    <p><strong class="font-semibold">Tina Kylau</strong><br>
+                    c/o Tina Kylau<br>
+                    CEO Tina Kylau<br>
+                    Wolfhelmstraße 36<br>
+                    50259 Pulheim<br>
+                    Deutschland</p>
+                    <p class="mt-4">
+                        <strong class="font-semibold">T</strong> <a href="tel:+491775353744" class="hover:text-brand-accent">+49 177 53 53 744</a><br>
+                        <strong class="font-semibold">E</strong> <a href="mailto:kontakt@tinakylau.com" class="hover:text-brand-accent">kontakt@tinakylau.com</a>
+                    </p>
+                    <p class="mt-4"><strong class="font-semibold">Steuer-Nr.</strong>: 224/5174/1724</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-2xl font-semibold text-white mb-6">Kontakt aufnehmen</h3>
+                <form id="contactform" action="{{ url('contact:contact_form') }}" method="post" name="ContactForm" class="space-y-4">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="id_name" class="block text-sm font-medium mb-1">Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" placeholder="Ihr Name" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 focus:border-brand-accent focus:ring-brand-accent" required id="id_name">
+                        </div>
+                        <div>
+                            <label for="id_email" class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" placeholder="E-Mail" maxlength="320" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 focus:border-brand-accent focus:ring-brand-accent" required id="id_email">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="id_subject" class="block text-sm font-medium mb-1">Betreff</label>
+                        <input type="text" name="subject" placeholder="Betreff" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 focus:border-brand-accent focus:ring-brand-accent" id="id_subject">
+                    </div>
+                    <div>
+                        <label for="id_message" class="block text-sm font-medium mb-1">Nachricht</label>
+                        <textarea name="message" cols="40" rows="5" placeholder="... Ihre Nachricht" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 focus:border-brand-accent focus:ring-brand-accent" id="id_message"></textarea>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" name="dsgvo" class="h-4 w-4 text-brand-accent border-gray-500 rounded focus:ring-brand-accent mr-2" id="id_dsgvo">
+                        <label for="id_dsgvo" class="text-sm">Ich bin damit einverstanden, dass meine Daten nur von Tina Kylau verwendet werden, um meine Fragen zu beantworten.</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-brand-accent text-white font-semibold py-3 px-8 rounded-lg hover:bg-opacity-80 transition-colors duration-300">
+                            <i class="fa-solid fa-check mr-2"></i> Absenden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 py-8">
+            <div class="container mx-auto px-4 md:px-6 text-center md:flex md:justify-between items-center text-sm">
+                <div class="space-x-4 mb-4 md:mb-0">
+                    <a href="{{ url('pages:home') }}" class="hover:text-brand-accent">Start</a>&bull;
+                    <a href="{{ url('pages:page_detail', kwargs={'slug': 'impressum'}) }}" class="hover:text-brand-accent">Impressum</a>&bull;
+                    <a href="{{ url('pages:page_detail', kwargs={'slug': 'datenschutzerklaerung'}) }}" class="hover:text-brand-accent">Datenschutz</a>&bull;
+                    <a href="{{ url('pages:blog') }}" class="hover:text-brand-accent">Blog</a>
+                </div>
+                <p><i class="fa-regular fa-copyright"></i> {{ now().year }} Tina Kylau</p>
+            </div>
+        </div>
+    </div>
+</footer>

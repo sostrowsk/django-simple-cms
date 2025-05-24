@@ -1,0 +1,38 @@
+<header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex justify-between items-center py-4">
+            <a href="{{ url('pages:home') }}" class="logo">
+                <img class="h-10 md:h-12" src="{{ static('img/logo.svg') }}" alt="Tina Kylau Logo">
+            </a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="{{ url('pages:home') }}" class="text-brand-secondary hover:text-brand-primary transition-colors">Home</a>
+                <a href="{{ url('pages:page_detail', kwargs={'slug': 'angebot'}) }}" class="text-brand-secondary hover:text-brand-primary transition-colors">Angebot</a>
+                <a href="{{ url('pages:page_detail', kwargs={'slug': 'about'}) }}" class="text-brand-secondary hover:text-brand-primary transition-colors">About</a>
+                <a href="{{ url('pages:blog') }}" class="text-brand-secondary hover:text-brand-primary transition-colors">Blog</a>
+                <a href="{{ url('contact:contact_form') }}" class="text-brand-secondary hover:text-brand-primary transition-colors">Kontakt</a>
+                <a href="/admin/" class="text-brand-secondary hover:text-brand-primary transition-colors" title="Admin"><i class="fas fa-user-cog"></i></a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-brand-dark focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-md z-40 transform -translate-x-full p-6">
+        <div class="flex justify-end mb-6">
+            <button id="mobile-menu-close-button" class="text-brand-dark focus:outline-none">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4">
+            <a href="{{ url('pages:home') }}" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg">Home</a>
+            <a href="{{ url('pages:page_detail', kwargs={'slug': 'angebot'}) }}" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg">Angebot</a>
+            <a href="{{ url('pages:page_detail', kwargs={'slug': 'about'}) }}" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg">About</a>
+            <a href="{{ url('pages:blog') }}" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg">Blog</a>
+            <a href="{{ url('contact:contact_form') }}" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg">Kontakt</a>
+            <hr class="my-2 border-gray-300">
+            <a href="/admin/" class="text-brand-secondary hover:text-brand-primary transition-colors py-2 text-lg"><i class="fas fa-user-cog mr-2"></i>Admin</a>
+        </nav>
+    </div>
+</header>

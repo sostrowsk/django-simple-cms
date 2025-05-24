@@ -1,3 +1,28 @@
 @import "tailwindcss";
 
-/* Custom styles will be added after the imports to avoid conflicts with Tailwind v4 */
+/* Custom brand colors for landing page */
+.text-brand-primary { color: #874645; }
+.bg-brand-primary { background-color: #874645; }
+.bg-brand-primary-light { background-color: #ECE5DF; }
+.text-brand-secondary { color: #857074; }
+.bg-brand-secondary { background-color: #857074; }
+.bg-brand-accent { background-color: #CB9B9A; }
+.text-brand-accent { color: #CB9B9A; }
+.text-brand-dark { color: #3D4752; }
+.bg-brand-dark { background-color: #3D4752; }
+.text-brand-light { color: #D9CCBF; }
+
+/* Aspect ratio utility */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(9 / 16 * 100%);
+}
+.aspect-h-9 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

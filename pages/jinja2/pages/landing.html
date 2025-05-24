@@ -1,0 +1,85 @@
+{% extends 'base-landing.html' %}
+
+{% block content %}
+<!-- Header -->
+{% include 'organisms/header-landing.html' %}
+
+<main>
+    <!-- Hero Section -->
+    {% include 'organisms/hero-section.html' %}
+    
+    <!-- Self Doubt Section -->
+    {% include 'organisms/self-doubt-section.html' %}
+    
+    <!-- Welcome Section -->
+    {% include 'organisms/welcome-section.html' %}
+    
+    <!-- Testimonials -->
+    {% include 'organisms/testimonials-section.html' %}
+    
+    <!-- Benefits Section -->
+    {% include 'organisms/benefits-section.html' %}
+    
+    <!-- Wavy Divider -->
+    <div class="wavy-divider">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 32C0 32 180 0 360 0C540 0 720 32 900 32C1080 32 1260 0 1440 0V80H0V32Z" fill="#ECE5DF"/>
+        </svg>
+    </div>
+    
+    <!-- When Section -->
+    {% include 'organisms/when-section.html' %}
+    
+    <!-- Services Section -->
+    {% include 'organisms/services-section.html' %}
+    
+    <!-- Academy Courses -->
+    {% include 'organisms/academy-section.html' %}
+    
+    <!-- Videos Section -->
+    {% include 'organisms/videos-section.html' %}
+</main>
+
+<!-- Footer -->
+{% include 'organisms/footer-landing.html' %}
+
+<!-- Mobile Menu Script -->
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu && mobileMenuCloseButton) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+        });
+        mobileMenuCloseButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('-translate-x-full');
+        });
+        // Close menu if clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('-translate-x-full');
+            }
+        });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
