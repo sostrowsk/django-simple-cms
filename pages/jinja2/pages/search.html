@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Search Header -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Search Results</h1>
+        {% if query %}
+        <p class="text-lg text-gray-600">
+            Results for "<strong>{{ query }}</strong>"
+        </p>
+        {% endif %}
+    </div>
+    
+    <!-- Search Form -->
+    <div class="mb-8 max-w-2xl">
+        <form action="{{ url('pages:search') }}" method="get">
+            <div class="flex gap-4">
+                <input type="text" 
+                       name="q" 
+                       value="{{ query }}"
+                       placeholder="Search pages..."
+                       class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <button type="submit" 
+                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    Search
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Results -->
+    {% if query %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for page in pages %}
+                {% include 'molecules/page-card.html' %}
+            {% else %}
+                <div class="col-span-full text-center py-12">
+                    <p class="text-gray-600">No pages found matching your search.</p>
+                    <p class="text-gray-500 mt-2">Try using different keywords.</p>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        {% include 'molecules/pagination.html' %}
+    {% else %}
+        <div class="text-center py-12">
+            <p class="text-gray-600">Enter a search term to find pages.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

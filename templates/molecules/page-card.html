@@ -1,0 +1,46 @@
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+    <div class="p-6">
+        <!-- Title -->
+        <h2 class="text-xl font-semibold mb-2">
+            <a href="{{ url('pages:page_detail', kwargs={'slug': page.slug}) }}" 
+               class="text-gray-900 hover:text-blue-600">
+                {{ page.title }}
+            </a>
+        </h2>
+        
+        <!-- Meta info -->
+        <div class="text-sm text-gray-600 mb-3 flex items-center space-x-4">
+            <span>{{ page.created_at|date('F j, Y') }}</span>
+            {% if page.category %}
+            <span>•</span>
+            <a href="{{ url('pages:category_detail', kwargs={'slug': page.category.slug}) }}"
+               class="hover:text-blue-600">
+                {{ page.category.name }}
+            </a>
+            {% endif %}
+        </div>
+        
+        <!-- Content preview -->
+        <p class="text-gray-700 mb-4">
+            {{ page.content|truncate(150) }}
+        </p>
+        
+        <!-- Tags -->
+        {% if page.tags.all() %}
+        <div class="flex flex-wrap gap-2 mb-4">
+            {% for tag in page.tags.all() %}
+            <a href="{{ url('pages:tag_detail', kwargs={'slug': tag.slug}) }}"
+               class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200">
+                {{ tag.name }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Read more -->
+        <a href="{{ url('pages:page_detail', kwargs={'slug': page.slug}) }}" 
+           class="text-blue-600 hover:text-blue-800 font-medium">
+            Read more →
+        </a>
+    </div>
+</article>

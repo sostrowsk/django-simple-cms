@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Simple Content Management System{% endblock %}">
+    <title>{% block title %}CMS{% endblock %} - Django CMS</title>
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="{{ static('css/output.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+    <!-- Header -->
+    {% include 'organisms/header.html' %}
+    
+    <!-- Main Content -->
+    <main class="flex-1">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    {% include 'organisms/footer.html' %}
+    
+    <!-- JavaScript -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

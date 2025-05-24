@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Tag: {{ tag.name }}{% endblock %}
+{% block meta_description %}Browse articles tagged with {{ tag.name }}{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Tag Header -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">
+            <span class="text-gray-600">#</span>{{ tag.name }}
+        </h1>
+        <p class="text-lg text-gray-600">All articles tagged with {{ tag.name }}</p>
+    </div>
+    
+    <!-- Pages Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for page in pages %}
+            {% include 'molecules/page-card.html' %}
+        {% else %}
+            <div class="col-span-full text-center py-12">
+                <p class="text-gray-600">No pages with this tag yet.</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% include 'molecules/pagination.html' %}
+</div>
+{% endblock %}
