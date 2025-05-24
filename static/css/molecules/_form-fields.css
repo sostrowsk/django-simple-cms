@@ -16,7 +16,7 @@
 
 /* Form group */
 .form-group {
-  @apply mb-4;
+  @apply relative mb-6;
 }
 
 .form-group-inline {
@@ -100,4 +100,38 @@
 
 .form-group-success .label {
   @apply text-green-600;
+}
+
+/* Form field validation states */
+.form-field-default {
+  @apply border-gray-300 focus:border-blue-500;
+}
+
+.form-field-valid {
+  @apply border-green-500 bg-green-50;
+}
+
+.form-field-invalid {
+  @apply border-red-500 bg-red-50;
+}
+
+/* Success icon positioning */
+.form-group .success-icon {
+  @apply absolute right-3 top-9;
+}
+
+/* Error message styling */
+.form-group .error-message {
+  @apply text-red-500 text-sm mt-1;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
