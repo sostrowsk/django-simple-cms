@@ -35,3 +35,12 @@ Thumbs.db
 cms_project/__pycache__/
 pages/__pycache__/
 contact/__pycache__/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# CSS build output
+static/css/output.css
