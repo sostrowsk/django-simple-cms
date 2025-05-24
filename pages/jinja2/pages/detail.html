@@ -26,7 +26,7 @@
             <span>By {{ page.author.get_full_name() or page.author.username }}</span>
             <span>•</span>
             <time datetime="{{ page.created_at.isoformat() }}">
-                {{ page.created_at|date('F j, Y') }}
+                {{ page.created_at|date('%B %d, %Y') }}
             </time>
             {% if page.category %}
             <span>•</span>

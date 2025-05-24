@@ -10,7 +10,7 @@
         
         <!-- Meta info -->
         <div class="text-sm text-gray-600 mb-3 flex items-center space-x-4">
-            <span>{{ page.created_at|date('F j, Y') }}</span>
+            <span>{{ page.created_at|date('%B %d, %Y') }}</span>
             {% if page.category %}
             <span>•</span>
             <a href="{{ url('pages:category_detail', kwargs={'slug': page.category.slug}) }}"
