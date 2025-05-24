@@ -1,0 +1,80 @@
+/**
+ * Search - Atomic Design: Molecules
+ * 
+ * This file contains search component styles following the atomic design methodology.
+ * Search molecules combine input fields, buttons, and icons into functional
+ * search interfaces.
+ * 
+ * Includes:
+ * - Search bars
+ * - Search suggestions
+ * - Search filters
+ * - Advanced search forms
+ * - Search results items
+ * - Search icons and buttons
+ */
+
+/* Basic search bar */
+.search-bar {
+  @apply relative flex items-center;
+}
+
+.search-input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.search-icon {
+  @apply absolute left-3 text-gray-400;
+}
+
+.search-button {
+  @apply ml-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors;
+}
+
+/* Search with dropdown */
+.search-dropdown {
+  @apply absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10;
+}
+
+.search-suggestion {
+  @apply px-4 py-2 hover:bg-gray-50 cursor-pointer text-sm;
+}
+
+.search-suggestion-highlighted {
+  @apply bg-gray-50;
+}
+
+/* Search filters */
+.search-filters {
+  @apply flex flex-wrap gap-2 mt-3;
+}
+
+.search-filter-tag {
+  @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors;
+}
+
+.search-filter-active {
+  @apply bg-blue-100 text-blue-700 hover:bg-blue-200;
+}
+
+/* Advanced search */
+.search-advanced {
+  @apply p-4 bg-gray-50 border border-gray-200 rounded-lg mt-2;
+}
+
+/* Search results */
+.search-result {
+  @apply p-4 border-b border-gray-200 hover:bg-gray-50 transition-colors;
+}
+
+.search-result-title {
+  @apply font-medium text-gray-900 mb-1;
+}
+
+.search-result-description {
+  @apply text-sm text-gray-600;
+}
+
+.search-result-meta {
+  @apply text-xs text-gray-500 mt-1;
+}

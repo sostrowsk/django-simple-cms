@@ -1,0 +1,72 @@
+/**
+ * Forms - Atomic Design: Atoms
+ * 
+ * This file contains all form element styles following the atomic design methodology.
+ * Form atoms are the basic building blocks for user input interfaces.
+ * 
+ * Includes:
+ * - Input fields (text, email, password, etc.)
+ * - Textareas
+ * - Select dropdowns
+ * - Checkboxes
+ * - Radio buttons
+ * - Labels
+ * - Form validation states
+ */
+
+/* Base input styles */
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+/* Input variants */
+.input-sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.input-lg {
+  @apply px-4 py-3 text-lg;
+}
+
+/* Textarea */
+.textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y;
+}
+
+/* Select */
+.select {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white;
+}
+
+/* Checkbox and Radio */
+.checkbox,
+.radio {
+  @apply w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500;
+}
+
+.radio {
+  @apply rounded-full;
+}
+
+/* Label */
+.label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Validation states */
+.input-error {
+  @apply border-red-500 focus:ring-red-500;
+}
+
+.input-success {
+  @apply border-green-500 focus:ring-green-500;
+}
+
+/* Help text */
+.help-text {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+.error-text {
+  @apply text-sm text-red-600 mt-1;
+}

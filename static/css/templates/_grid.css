@@ -1,0 +1,140 @@
+/**
+ * Grid - Atomic Design: Templates
+ * 
+ * This file contains grid system styles following the atomic design methodology.
+ * Grid templates provide flexible layout structures for organizing content
+ * in various configurations.
+ * 
+ * Includes:
+ * - Basic grid systems
+ * - Responsive grid breakpoints
+ * - Grid gaps and spacing
+ * - Auto-fit and auto-fill grids
+ * - Masonry-style grids
+ * - Card grids
+ * - Gallery grids
+ */
+
+/* Base grid */
+.grid {
+  @apply grid;
+}
+
+/* Column counts */
+.grid-cols-1 {
+  @apply grid-cols-1;
+}
+
+.grid-cols-2 {
+  @apply grid-cols-2;
+}
+
+.grid-cols-3 {
+  @apply grid-cols-3;
+}
+
+.grid-cols-4 {
+  @apply grid-cols-4;
+}
+
+.grid-cols-5 {
+  @apply grid-cols-5;
+}
+
+.grid-cols-6 {
+  @apply grid-cols-6;
+}
+
+/* Responsive grids */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.grid-responsive-2 {
+  @apply grid grid-cols-1 md:grid-cols-2;
+}
+
+.grid-responsive-3 {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Grid gaps */
+.grid-gap-4 {
+  @apply gap-4;
+}
+
+.grid-gap-6 {
+  @apply gap-6;
+}
+
+.grid-gap-8 {
+  @apply gap-8;
+}
+
+/* Auto-fit grid */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  @apply gap-6;
+}
+
+.grid-auto-fit-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @apply gap-4;
+}
+
+.grid-auto-fit-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @apply gap-8;
+}
+
+/* Card grid */
+.card-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.card-grid-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+}
+
+.gallery-grid-item {
+  @apply relative aspect-square overflow-hidden rounded-lg;
+}
+
+/* Feature grid */
+.feature-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+/* Masonry-style grid (requires additional JS) */
+.grid-masonry {
+  @apply columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6;
+}
+
+.grid-masonry-item {
+  @apply break-inside-avoid mb-6;
+}
+
+/* Asymmetric grid */
+.grid-asymmetric {
+  @apply grid grid-cols-12 gap-6;
+}
+
+.grid-span-8 {
+  @apply col-span-12 lg:col-span-8;
+}
+
+.grid-span-4 {
+  @apply col-span-12 lg:col-span-4;
+}
+
+.grid-span-6 {
+  @apply col-span-12 md:col-span-6;
+}

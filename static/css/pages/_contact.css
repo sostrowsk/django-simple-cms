@@ -1,0 +1,174 @@
+/**
+ * Contact Page - Atomic Design: Pages
+ * 
+ * This file contains styles specific to the contact page following the atomic design methodology.
+ * The contact page combines templates with specific styles for contact forms,
+ * location information, and communication options.
+ * 
+ * Includes:
+ * - Contact form layout
+ * - Contact information cards
+ * - Map integration styles
+ * - Office locations
+ * - Social media links
+ * - FAQ section
+ * - Contact page hero
+ */
+
+/* Contact page wrapper */
+.contact-page {
+  @apply min-h-screen bg-gray-50;
+}
+
+/* Contact hero */
+.contact-hero {
+  @apply bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16 px-4;
+}
+
+.contact-hero-content {
+  @apply max-w-4xl mx-auto text-center;
+}
+
+.contact-hero-title {
+  @apply text-4xl md:text-5xl font-bold mb-4;
+}
+
+.contact-hero-subtitle {
+  @apply text-xl text-gray-300;
+}
+
+/* Contact main section */
+.contact-main {
+  @apply max-w-6xl mx-auto px-4 py-12 -mt-8;
+}
+
+.contact-grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-8;
+}
+
+/* Contact form section */
+.contact-form-section {
+  @apply lg:col-span-2 bg-white rounded-lg shadow-lg p-8;
+}
+
+.contact-form-title {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.contact-form {
+  @apply space-y-6;
+}
+
+.contact-form-row {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.contact-form-group {
+  @apply space-y-2;
+}
+
+.contact-form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.contact-form-textarea {
+  @apply min-h-[120px] resize-y;
+}
+
+.contact-form-submit {
+  @apply w-full bg-blue-600 text-white py-3 px-6 rounded-md font-medium hover:bg-blue-700 transition-colors;
+}
+
+/* Contact info section */
+.contact-info-section {
+  @apply space-y-6;
+}
+
+.contact-info-card {
+  @apply bg-white rounded-lg shadow-lg p-6;
+}
+
+.contact-info-icon {
+  @apply w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4;
+}
+
+.contact-info-title {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.contact-info-content {
+  @apply text-gray-600 space-y-1;
+}
+
+.contact-info-link {
+  @apply text-blue-600 hover:text-blue-800 transition-colors;
+}
+
+/* Office locations */
+.contact-locations {
+  @apply mt-16;
+}
+
+.contact-locations-title {
+  @apply text-3xl font-bold text-gray-900 text-center mb-8;
+}
+
+.contact-locations-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.contact-location-card {
+  @apply bg-white rounded-lg shadow p-6;
+}
+
+.contact-location-name {
+  @apply text-xl font-semibold text-gray-900 mb-3;
+}
+
+.contact-location-address {
+  @apply text-gray-600 mb-4;
+}
+
+.contact-location-hours {
+  @apply text-sm text-gray-500;
+}
+
+/* Map section */
+.contact-map {
+  @apply mt-12 h-96 bg-gray-200 rounded-lg overflow-hidden;
+}
+
+/* FAQ section */
+.contact-faq {
+  @apply mt-16 max-w-3xl mx-auto;
+}
+
+.contact-faq-title {
+  @apply text-3xl font-bold text-gray-900 text-center mb-8;
+}
+
+.contact-faq-item {
+  @apply bg-white rounded-lg shadow mb-4 p-6;
+}
+
+.contact-faq-question {
+  @apply text-lg font-medium text-gray-900 mb-2;
+}
+
+.contact-faq-answer {
+  @apply text-gray-600;
+}
+
+/* Social links */
+.contact-social {
+  @apply flex justify-center space-x-4 mt-8;
+}
+
+.contact-social-link {
+  @apply w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors;
+}

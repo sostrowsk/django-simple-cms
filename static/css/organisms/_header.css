@@ -1,0 +1,103 @@
+/**
+ * Header - Atomic Design: Organisms
+ * 
+ * This file contains header component styles following the atomic design methodology.
+ * The header organism combines multiple molecules (navigation, search, user menu)
+ * into a complete page header structure.
+ * 
+ * Includes:
+ * - Main header container
+ * - Logo placement
+ * - Primary navigation integration
+ * - Search bar integration
+ * - User menu/account section
+ * - Mobile responsive patterns
+ * - Sticky header behaviors
+ */
+
+/* Main header */
+.header {
+  @apply bg-white shadow-sm border-b border-gray-200;
+}
+
+.header-inner {
+  @apply container mx-auto px-4 py-3;
+}
+
+.header-content {
+  @apply flex items-center justify-between;
+}
+
+/* Header sections */
+.header-left {
+  @apply flex items-center space-x-8;
+}
+
+.header-center {
+  @apply flex-1 mx-8;
+}
+
+.header-right {
+  @apply flex items-center space-x-4;
+}
+
+/* Logo */
+.header-logo {
+  @apply flex items-center space-x-2 text-xl font-bold text-gray-900;
+}
+
+.header-logo img {
+  @apply h-8 w-auto;
+}
+
+/* Header navigation */
+.header-nav {
+  @apply hidden md:flex items-center space-x-1;
+}
+
+/* Header search */
+.header-search {
+  @apply max-w-md w-full;
+}
+
+/* User menu */
+.header-user-menu {
+  @apply relative;
+}
+
+.header-user-avatar {
+  @apply w-8 h-8 rounded-full cursor-pointer;
+}
+
+.header-user-dropdown {
+  @apply absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50;
+}
+
+/* Mobile menu toggle */
+.header-mobile-toggle {
+  @apply md:hidden p-2 rounded-md hover:bg-gray-100;
+}
+
+/* Sticky header */
+.header-sticky {
+  @apply sticky top-0 z-40;
+}
+
+/* Transparent header (for hero sections) */
+.header-transparent {
+  @apply bg-transparent border-0 shadow-none;
+}
+
+.header-transparent .header-logo,
+.header-transparent .nav-item {
+  @apply text-white;
+}
+
+/* Mobile menu */
+.header-mobile-menu {
+  @apply md:hidden fixed inset-0 z-50 bg-white;
+}
+
+.header-mobile-menu-content {
+  @apply flex flex-col p-4;
+}

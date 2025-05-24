@@ -1,0 +1,103 @@
+/**
+ * Form Fields - Atomic Design: Molecules
+ * 
+ * This file contains composite form field styles following the atomic design methodology.
+ * Form field molecules combine labels, inputs, help text, and validation messages
+ * into complete, reusable form components.
+ * 
+ * Includes:
+ * - Form groups (label + input + help text)
+ * - Input groups (input + addons)
+ * - Form field wrappers
+ * - Inline form fields
+ * - Floating labels
+ * - Input with icons
+ */
+
+/* Form group */
+.form-group {
+  @apply mb-4;
+}
+
+.form-group-inline {
+  @apply flex items-center space-x-3;
+}
+
+/* Input group */
+.input-group {
+  @apply flex;
+}
+
+.input-group-prepend,
+.input-group-append {
+  @apply flex items-center px-3 bg-gray-50 border border-gray-300 text-gray-600;
+}
+
+.input-group-prepend {
+  @apply rounded-l-md border-r-0;
+}
+
+.input-group-append {
+  @apply rounded-r-md border-l-0;
+}
+
+.input-group .input {
+  @apply rounded-none;
+}
+
+.input-group .input:first-child {
+  @apply rounded-l-md;
+}
+
+.input-group .input:last-child {
+  @apply rounded-r-md;
+}
+
+/* Field with icon */
+.field-with-icon {
+  @apply relative;
+}
+
+.field-icon-left {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.field-icon-right {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.input-with-icon-left {
+  @apply pl-10;
+}
+
+.input-with-icon-right {
+  @apply pr-10;
+}
+
+/* Floating label */
+.floating-label-group {
+  @apply relative;
+}
+
+.floating-label {
+  @apply absolute left-3 top-2 text-gray-500 transition-all pointer-events-none;
+}
+
+.floating-label-group .input:focus ~ .floating-label,
+.floating-label-group .input:not(:placeholder-shown) ~ .floating-label {
+  @apply -top-2 left-2 text-xs bg-white px-1;
+}
+
+/* Required field indicator */
+.required-indicator {
+  @apply text-red-500 ml-1;
+}
+
+/* Field states */
+.form-group-error .label {
+  @apply text-red-600;
+}
+
+.form-group-success .label {
+  @apply text-green-600;
+}

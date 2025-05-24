@@ -1,0 +1,132 @@
+/**
+ * Page Layouts - Atomic Design: Templates
+ * 
+ * This file contains page layout styles following the atomic design methodology.
+ * Templates combine organisms to create consistent page structures that can be
+ * reused across different pages with varying content.
+ * 
+ * Includes:
+ * - Full-width layouts
+ * - Centered content layouts
+ * - Sidebar layouts (left/right)
+ * - Dashboard layouts
+ * - Split screen layouts
+ * - Hero section layouts
+ * - Authentication layouts
+ */
+
+/* Base layout */
+.layout {
+  @apply min-h-screen flex flex-col;
+}
+
+/* Main content area */
+.layout-main {
+  @apply flex-1;
+}
+
+/* Centered content layout */
+.layout-centered {
+  @apply container mx-auto px-4 py-8;
+}
+
+.layout-centered-narrow {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+.layout-centered-wide {
+  @apply max-w-7xl mx-auto px-4 py-8;
+}
+
+/* Sidebar layouts */
+.layout-with-sidebar {
+  @apply flex;
+}
+
+.layout-sidebar-left {
+  @apply flex-shrink-0;
+}
+
+.layout-sidebar-right {
+  @apply flex-shrink-0 order-last;
+}
+
+.layout-content {
+  @apply flex-1 p-6;
+}
+
+/* Dashboard layout */
+.layout-dashboard {
+  @apply flex h-screen overflow-hidden;
+}
+
+.layout-dashboard-sidebar {
+  @apply flex-shrink-0;
+}
+
+.layout-dashboard-main {
+  @apply flex-1 flex flex-col overflow-hidden;
+}
+
+.layout-dashboard-content {
+  @apply flex-1 overflow-y-auto bg-gray-50 p-6;
+}
+
+/* Split screen layout */
+.layout-split {
+  @apply flex min-h-screen;
+}
+
+.layout-split-left,
+.layout-split-right {
+  @apply flex-1 flex items-center justify-center p-8;
+}
+
+.layout-split-left {
+  @apply bg-gray-50;
+}
+
+/* Hero layout */
+.layout-hero {
+  @apply relative;
+}
+
+.layout-hero-content {
+  @apply relative z-10;
+}
+
+.layout-hero-background {
+  @apply absolute inset-0;
+}
+
+/* Authentication layout */
+.layout-auth {
+  @apply min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4;
+}
+
+.layout-auth-container {
+  @apply max-w-md w-full space-y-8;
+}
+
+.layout-auth-card {
+  @apply bg-white py-8 px-6 shadow rounded-lg;
+}
+
+/* Full width layout */
+.layout-fullwidth {
+  @apply w-full;
+}
+
+/* Boxed layout */
+.layout-boxed {
+  @apply max-w-screen-2xl mx-auto;
+}
+
+/* Layout with fixed header */
+.layout-fixed-header .header {
+  @apply fixed top-0 left-0 right-0 z-40;
+}
+
+.layout-fixed-header .layout-main {
+  @apply pt-16;
+}

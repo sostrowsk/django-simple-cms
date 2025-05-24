@@ -1,0 +1,139 @@
+/**
+ * Home Page - Atomic Design: Pages
+ * 
+ * This file contains styles specific to the home page following the atomic design methodology.
+ * Pages are the final level that combines templates with real content to create
+ * specific page instances.
+ * 
+ * Includes:
+ * - Hero section styles
+ * - Feature showcase
+ * - Testimonials section
+ * - Call-to-action sections
+ * - Recent posts/products
+ * - Newsletter signup
+ * - Page-specific overrides
+ */
+
+/* Home hero section */
+.home-hero {
+  @apply relative bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-24 px-4;
+}
+
+.home-hero-content {
+  @apply max-w-5xl mx-auto text-center;
+}
+
+.home-hero-title {
+  @apply text-5xl md:text-6xl font-bold mb-6 leading-tight;
+}
+
+.home-hero-subtitle {
+  @apply text-xl md:text-2xl mb-8 text-blue-100;
+}
+
+.home-hero-cta {
+  @apply inline-flex space-x-4;
+}
+
+/* Features section */
+.home-features {
+  @apply py-16 bg-gray-50;
+}
+
+.home-features-header {
+  @apply text-center mb-12;
+}
+
+.home-features-title {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4;
+}
+
+.home-features-description {
+  @apply text-lg text-gray-600 max-w-2xl mx-auto;
+}
+
+/* Testimonials */
+.home-testimonials {
+  @apply py-16 bg-white;
+}
+
+.home-testimonial-card {
+  @apply bg-gray-50 p-8 rounded-lg;
+}
+
+.home-testimonial-quote {
+  @apply text-lg text-gray-700 italic mb-4;
+}
+
+.home-testimonial-author {
+  @apply font-medium text-gray-900;
+}
+
+.home-testimonial-role {
+  @apply text-sm text-gray-600;
+}
+
+/* Stats section */
+.home-stats {
+  @apply py-12 bg-gray-900 text-white;
+}
+
+.home-stats-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-8 text-center;
+}
+
+.home-stat-value {
+  @apply text-4xl font-bold mb-2;
+}
+
+.home-stat-label {
+  @apply text-gray-400;
+}
+
+/* Recent posts */
+.home-posts {
+  @apply py-16;
+}
+
+.home-posts-header {
+  @apply flex items-center justify-between mb-8;
+}
+
+.home-posts-title {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.home-posts-link {
+  @apply text-blue-600 hover:text-blue-700 font-medium;
+}
+
+/* CTA section */
+.home-cta {
+  @apply bg-blue-600 text-white py-16 text-center;
+}
+
+.home-cta-title {
+  @apply text-3xl font-bold mb-4;
+}
+
+.home-cta-description {
+  @apply text-xl mb-8 text-blue-100;
+}
+
+.home-cta-button {
+  @apply bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors;
+}
+
+/* Newsletter section */
+.home-newsletter {
+  @apply py-12 bg-gray-100;
+}
+
+.home-newsletter-content {
+  @apply max-w-2xl mx-auto text-center;
+}
+
+.home-newsletter-form {
+  @apply flex flex-col sm:flex-row gap-4 mt-6;
+}

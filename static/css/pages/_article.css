@@ -1,0 +1,170 @@
+/**
+ * Article Page - Atomic Design: Pages
+ * 
+ * This file contains styles specific to article/blog post pages following the atomic design methodology.
+ * Article pages combine templates with content-specific styles for blog posts,
+ * news articles, and long-form content.
+ * 
+ * Includes:
+ * - Article header/hero
+ * - Article metadata
+ * - Content typography
+ * - Image and media styles
+ * - Blockquotes and callouts
+ * - Author bio section
+ * - Related articles
+ * - Comments section
+ */
+
+/* Article container */
+.article {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+/* Article header */
+.article-header {
+  @apply mb-8 pb-8 border-b border-gray-200;
+}
+
+.article-category {
+  @apply text-sm font-medium text-blue-600 uppercase tracking-wide mb-2;
+}
+
+.article-title {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight;
+}
+
+.article-excerpt {
+  @apply text-xl text-gray-600 leading-relaxed;
+}
+
+/* Article meta */
+.article-meta {
+  @apply flex flex-wrap items-center gap-4 mt-6 text-sm text-gray-600;
+}
+
+.article-author {
+  @apply flex items-center gap-2;
+}
+
+.article-author-avatar {
+  @apply w-10 h-10 rounded-full;
+}
+
+.article-author-name {
+  @apply font-medium text-gray-900;
+}
+
+.article-date {
+  @apply text-gray-500;
+}
+
+.article-read-time {
+  @apply text-gray-500;
+}
+
+/* Article content */
+.article-content {
+  @apply prose prose-lg max-w-none;
+}
+
+.article-content h2 {
+  @apply text-3xl font-bold mt-12 mb-4 text-gray-900;
+}
+
+.article-content h3 {
+  @apply text-2xl font-semibold mt-8 mb-3 text-gray-900;
+}
+
+.article-content p {
+  @apply mb-6 leading-relaxed;
+}
+
+.article-content a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.article-content ul,
+.article-content ol {
+  @apply my-6 ml-6;
+}
+
+.article-content li {
+  @apply mb-2;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-gray-300 pl-6 my-8 italic text-gray-700;
+}
+
+.article-content pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+}
+
+.article-content code {
+  @apply bg-gray-100 text-gray-900 px-1 py-0.5 rounded text-sm;
+}
+
+.article-content pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Article images */
+.article-image {
+  @apply my-8 rounded-lg overflow-hidden;
+}
+
+.article-image img {
+  @apply w-full;
+}
+
+.article-image-caption {
+  @apply text-sm text-gray-600 mt-2 text-center;
+}
+
+/* Article tags */
+.article-tags {
+  @apply flex flex-wrap gap-2 mt-8 pt-8 border-t border-gray-200;
+}
+
+.article-tag {
+  @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors;
+}
+
+/* Author bio */
+.article-author-bio {
+  @apply bg-gray-50 rounded-lg p-6 mt-12;
+}
+
+.article-author-bio-header {
+  @apply flex items-start gap-4;
+}
+
+.article-author-bio-avatar {
+  @apply w-16 h-16 rounded-full;
+}
+
+.article-author-bio-info {
+  @apply flex-1;
+}
+
+.article-author-bio-name {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.article-author-bio-description {
+  @apply text-gray-600 mt-1;
+}
+
+/* Related articles */
+.article-related {
+  @apply mt-16 pt-12 border-t border-gray-200;
+}
+
+.article-related-title {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.article-related-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
