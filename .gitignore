@@ -42,5 +42,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# CSS build output
-static/css/output.css
+# Bundle build output
+static/bundle/

@@ -45,7 +45,7 @@ npm install
 npm run build-css  # one-time build
 npm run dev        # watch mode for development
 
-# The CSS pipeline: static/css/main.css → PostCSS/Tailwind → static/css/output.css
+# The CSS pipeline: static/css/main.css → PostCSS/Tailwind → static/bundle/output.css
 ```
 
 ## Architecture

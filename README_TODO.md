@@ -316,7 +316,7 @@ Build a simple Content Management System using Django with Jinja2 templates, loc
 python manage.py runserver
 
 # Build Tailwind CSS
-npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
+npx tailwindcss -i ./static/css/input.css -o ./static/bundle/output.css --watch
 
 # Create migrations
 python manage.py makemigrations

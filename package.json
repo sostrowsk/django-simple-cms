@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "postcss static/css/main.css -o static/css/output.css",
-    "watch-css": "postcss static/css/main.css -o static/css/output.css --watch",
-    "dev": "npm run watch-css",
-    "build": "npm run build-css"
+    "build-css": "postcss static/css/main.css -o static/bundle/output.css",
+    "watch-css": "postcss static/css/main.css -o static/bundle/output.css --watch",
+    "build-js": "esbuild static/js/*.js --bundle --minify --sourcemap --target=es2015 --outdir=static/bundle/",
+    "watch-js": "esbuild static/js/*.js --bundle --minify --sourcemap --target=es2015 --outdir=static/bundle/ --watch",
+    "dev": "npm run watch-css & npm run watch-js",
+    "build": "npm run build-css && npm run build-js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.7",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.4",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.7"
