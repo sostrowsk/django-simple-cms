@@ -47,19 +47,32 @@ The `contact` app handles form submissions:
 The project follows Brad Frost's Atomic Design methodology:
 
 ```
-templates/
-├── atoms/          # Basic UI elements (buttons, headings)
-├── molecules/      # Simple components (cards, form fields, search boxes)
-├── organisms/      # Complex sections (header, footer, hero sections)
-├── templates/      # Page layouts
-└── pages/          # Specific page implementations
+templates/                  # Global templates
+├── atoms/                  # Basic UI elements (buttons, headings)
+├── molecules/              # Simple components (cards, form fields, search boxes)
+├── organisms/              # Complex sections (header, footer, hero sections)
+├── base.html              # Main base template
+└── base-landing.html      # Landing page base template
 
-static/css/
-├── atoms/          # Basic element styles
-├── molecules/      # Component styles
-├── organisms/      # Section styles
-├── templates/      # Layout styles
-└── pages/          # Page-specific styles
+pages/templates/pages/      # Pages app templates
+├── landing.html           # Homepage/landing page
+├── home.html              # Blog listing page
+├── detail.html            # Individual page detail
+├── category.html          # Category listing
+├── tag.html               # Tag listing
+└── search.html            # Search results
+
+contact/templates/contact/  # Contact app templates
+├── contact.html           # Contact form page
+└── success.html           # Success message page
+
+static/css/                 # CSS following Atomic Design
+├── atoms/                  # Basic element styles
+├── molecules/              # Component styles
+├── organisms/              # Section styles
+├── templates/              # Layout styles
+├── pages/                  # Page-specific styles
+└── main.css               # Main CSS entry point
 ```
 
 ## 🛠️ Setup Instructions
@@ -139,9 +152,16 @@ Visit `http://127.0.0.1:8000` to see the landing page.
 ### Customizing the Landing Page
 
 Edit the template files in:
-- `templates/organisms/` - Individual sections
-- `pages/jinja2/pages/landing.html` - Main landing page structure
+- `templates/organisms/` - Individual sections (header, footer, hero, etc.)
+- `pages/templates/pages/landing.html` - Main landing page structure
 - `static/css/main.css` - Custom styles and brand colors
+
+The templates use Django's template language with:
+- `{% load static %}` - Load static files
+- `{% static 'path/to/file' %}` - Reference static files
+- `{% url 'app:view_name' %}` - Generate URLs
+- `{% include 'template.html' %}` - Include other templates
+- `{{ variable|filter }}` - Apply filters to variables
 
 ### Brand Colors
 
@@ -184,6 +204,13 @@ Follow the Atomic Design pattern:
 2. Combine atoms into molecules
 3. Build organisms from molecules
 4. Use organisms in page templates
+
+Django template tips:
+- Always add `{% load static %}` at the top when using static files
+- Use `{% csrf_token %}` in forms
+- Template inheritance: `{% extends 'base.html' %}`
+- Block content: `{% block content %}...{% endblock %}`
+- Context variables are automatically available from views
 
 ## 🌐 Deployment
 
