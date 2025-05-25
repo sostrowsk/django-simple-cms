@@ -1,6 +1,6 @@
 # Django Simple CMS
 
-A modern Content Management System built with Django, Jinja2 templates, and Tailwind CSS, following Brad Frost's Atomic Design pattern. Features a professional landing page and blog system with a contact form that includes real-time JavaScript validation.
+A modern Content Management System built with Django, Django templates, and Tailwind CSS, following Brad Frost's Atomic Design pattern. Features a professional landing page and blog system with a contact form that includes real-time JavaScript validation.
 
 ## 🚀 Features
 
@@ -8,7 +8,7 @@ A modern Content Management System built with Django, Jinja2 templates, and Tail
 - **Blog/Pages System**: Full-featured CMS with categories and tags
 - **Contact Form**: Advanced form with real-time validation and rate limiting
 - **Atomic Design Pattern**: Organized component architecture
-- **Jinja2 Templates**: Powerful templating with custom filters
+- **Django Templates**: Standard Django templating system
 - **Tailwind CSS v4**: Modern utility-first CSS framework
 - **Responsive Design**: Mobile-first approach with smooth animations
 - **Admin Interface**: Django admin for content management
@@ -218,7 +218,6 @@ For issues and questions:
 ## 🏗️ Built With
 
 - [Django](https://www.djangoproject.com/) - The web framework
-- [Jinja2](https://jinja.palletsprojects.com/) - Template engine
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Poetry](https://python-poetry.org/) - Python dependency management
 - [PostCSS](https://postcss.org/) - CSS processing

@@ -1,9 +1,10 @@
+{% load static %}
 <footer class="bg-brand-dark text-brand-light pt-12">
     <div class="container mx-auto px-4 md:px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
             <div class="lg:col-span-1">
-                <a href="{{ url('pages:home') }}" class="logo mb-6 inline-block">
-                    <img class="h-12" src="{{ static('img/logo.svg') }}" alt="Tina Kylau Logo">
+                <a href="{% url 'pages:home' %}" class="logo mb-6 inline-block">
+                    <img class="h-12" src="{% static 'img/logo.svg' %}" alt="Tina Kylau Logo">
                 </a>
                 <div class="address text-sm">
                     <p><strong class="font-semibold">Tina Kylau</strong><br>
@@ -22,7 +23,7 @@
 
             <div class="lg:col-span-2">
                 <h3 class="text-2xl font-semibold text-white mb-6">Kontakt aufnehmen</h3>
-                <form id="contactform" action="{{ url('contact:contact_form') }}" method="post" name="ContactForm" class="space-y-4">
+                <form id="contactform" action="{% url 'contact:contact_form' %}" method="post" name="ContactForm" class="space-y-4">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -57,12 +58,12 @@
         <div class="border-t border-gray-700 py-8">
             <div class="container mx-auto px-4 md:px-6 text-center md:flex md:justify-between items-center text-sm">
                 <div class="space-x-4 mb-4 md:mb-0">
-                    <a href="{{ url('pages:home') }}" class="hover:text-brand-accent">Start</a>&bull;
-                    <a href="{{ url('pages:page_detail', kwargs={'slug': 'impressum'}) }}" class="hover:text-brand-accent">Impressum</a>&bull;
-                    <a href="{{ url('pages:page_detail', kwargs={'slug': 'datenschutzerklaerung'}) }}" class="hover:text-brand-accent">Datenschutz</a>&bull;
-                    <a href="{{ url('pages:blog') }}" class="hover:text-brand-accent">Blog</a>
+                    <a href="{% url 'pages:home' %}" class="hover:text-brand-accent">Start</a>&bull;
+                    <a href="{% url 'pages:page_detail' slug='impressum' %}" class="hover:text-brand-accent">Impressum</a>&bull;
+                    <a href="{% url 'pages:page_detail' slug='datenschutzerklaerung' %}" class="hover:text-brand-accent">Datenschutz</a>&bull;
+                    <a href="{% url 'pages:blog' %}" class="hover:text-brand-accent">Blog</a>
                 </div>
-                <p><i class="fa-regular fa-copyright"></i> {{ now().year }} Tina Kylau</p>
+                <p><i class="fa-regular fa-copyright"></i> {% now 'Y' %} Tina Kylau</p>
             </div>
         </div>
     </div>

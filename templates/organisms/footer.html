@@ -15,7 +15,7 @@
                 <ul class="space-y-2">
                     {% for category in categories %}
                     <li>
-                        <a href="{{ url('pages:category_detail', kwargs={'slug': category.slug}) }}" 
+                        <a href="{% url 'pages:category_detail' slug=category.slug %}" 
                            class="text-gray-400 hover:text-white">
                             {{ category.name }}
                         </a>
@@ -30,7 +30,7 @@
                 <ul class="space-y-2">
                     {% for page in recent_pages %}
                     <li>
-                        <a href="{{ url('pages:page_detail', kwargs={'slug': page.slug}) }}" 
+                        <a href="{% url 'pages:page_detail' slug=page.slug %}" 
                            class="text-gray-400 hover:text-white">
                             {{ page.title }}
                         </a>
@@ -45,7 +45,7 @@
                 <p class="text-gray-400 mb-4">
                     Have questions? Get in touch with us.
                 </p>
-                <a href="{{ url('contact:contact_form') }}" 
+                <a href="{% url 'contact:contact_form' %}" 
                    class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                     Contact Us
                 </a>
@@ -53,7 +53,7 @@
         </div>
         
         <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>&copy; {{ now().year }} Django CMS. All rights reserved.</p>
+            <p>&copy; {% now 'Y' %} Django CMS. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-Django CMS with Jinja2 templates and Tailwind CSS v4, following Brad Frost's Atomic Design pattern. The project includes a landing page for Tina Kylau's Happy Leadership coaching business and a blog/pages system.
+Django CMS with Django templates and Tailwind CSS v4, following Brad Frost's Atomic Design pattern. The project includes a landing page for Tina Kylau's Happy Leadership coaching business and a blog/pages system.
 
 ## Development Commands
 
@@ -55,15 +55,14 @@ npm run dev        # watch mode for development
 - **contact**: Contact form with JavaScript validation, rate limiting, and email notifications
 
 ### Template System
-- Uses **Jinja2** (not Django templates) configured in `cms_project/jinja2.py`
-- Custom filters: `date`, `truncate`, `default`
-- Global functions: `static()`, `url()`, `now()`
+- Uses standard **Django templates**
 - Templates follow Atomic Design:
   - `templates/atoms/`: Basic UI elements
   - `templates/molecules/`: Component groups (page-card, pagination, form fields)
   - `templates/organisms/`: Complex sections (header, footer, hero sections)
-  - `pages/jinja2/pages/`: Page-specific templates
-  - `contact/jinja2/contact/`: Contact form templates
+  - `pages/templates/pages/`: Page-specific templates
+  - `contact/templates/contact/`: Contact form templates
+- Context processors include global categories and recent pages
 
 ### CSS Architecture
 - Tailwind CSS v4 with PostCSS
@@ -73,10 +72,10 @@ npm run dev        # watch mode for development
 - Brand colors defined for Tina Kylau theme
 
 ### Key Configuration Files
-- `cms_project/settings.py`: Django settings with Jinja2 configuration
-- `cms_project/jinja2.py`: Jinja2 environment setup with custom filters
+- `cms_project/settings.py`: Django settings
 - `tailwind.config.js`: Tailwind content paths
 - `postcss.config.js`: PostCSS plugins configuration
+- `pages/context_processors.py`: Global context for templates
 
 ### JavaScript
 - Contact form validation in `static/js/contact-validation.js`
@@ -86,6 +85,6 @@ npm run dev        # watch mode for development
 ## Important Notes
 - Always use Poetry for Python dependencies
 - CSS changes require rebuild: `npm run build-css`
-- Jinja2 syntax differs from Django templates (e.g., `{{ url('name') }}` not `{% url 'name' %}`)
 - The landing page uses a separate base template (`base-landing.html`) with custom styling
 - Contact form has rate limiting (5 submissions per hour per IP)
+- Templates use standard Django syntax with `{% load static %}` for static files

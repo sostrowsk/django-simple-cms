@@ -16,7 +16,7 @@
     
     <!-- Search Form -->
     <div class="mb-8 max-w-2xl">
-        <form action="{{ url('pages:search') }}" method="get">
+        <form action="{% url 'pages:search' %}" method="get">
             <div class="flex gap-4">
                 <input type="text" 
                        name="q" 

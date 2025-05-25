@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}{{ page.title }}{% endblock %}
-{% block meta_description %}{{ page.meta_description or page.content|truncate(160) }}{% endblock %}
+{% block meta_description %}{{ page.meta_description|default:page.content|truncatechars:160 }}{% endblock %}
 
 {% block content %}
 <article class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <!-- Breadcrumb -->
     <nav class="mb-8">
         <ol class="flex items-center space-x-2 text-sm text-gray-600">
-            <li><a href="{{ url('pages:home') }}" class="hover:text-blue-600">Home</a></li>
+            <li><a href="{% url 'pages:home' %}" class="hover:text-blue-600">Home</a></li>
             <li><span>/</span></li>
             {% if page.category %}
-            <li><a href="{{ url('pages:category_detail', kwargs={'slug': page.category.slug}) }}" class="hover:text-blue-600">{{ page.category.name }}</a></li>
+            <li><a href="{% url 'pages:category_detail' slug=page.category.slug %}" class="hover:text-blue-600">{{ page.category.name }}</a></li>
             <li><span>/</span></li>
             {% endif %}
             <li class="text-gray-900">{{ page.title }}</li>
@@ -23,14 +23,14 @@
         <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
         
         <div class="flex items-center space-x-4 text-gray-600">
-            <span>By {{ page.author.get_full_name() or page.author.username }}</span>
+            <span>By {{ page.author.get_full_name|default:page.author.username }}</span>
             <span>•</span>
-            <time datetime="{{ page.created_at.isoformat() }}">
-                {{ page.created_at|date('%B %d, %Y') }}
+            <time datetime="{{ page.created_at.isoformat }}">
+                {{ page.created_at|date:'F j, Y' }}
             </time>
             {% if page.category %}
             <span>•</span>
-            <a href="{{ url('pages:category_detail', kwargs={'slug': page.category.slug}) }}" 
+            <a href="{% url 'pages:category_detail' slug=page.category.slug %}" 
                class="text-blue-600 hover:text-blue-800">
                 {{ page.category.name }}
             </a>
@@ -39,11 +39,11 @@
     </header>
     
     <!-- Tags -->
-    {% if page.tags.all() %}
+    {% if page.tags.all %}
     <div class="mb-8">
         <div class="flex flex-wrap gap-2">
-            {% for tag in page.tags.all() %}
-            <a href="{{ url('pages:tag_detail', kwargs={'slug': tag.slug}) }}"
+            {% for tag in page.tags.all %}
+            <a href="{% url 'pages:tag_detail' slug=tag.slug %}"
                class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200">
                 #{{ tag.name }}
             </a>

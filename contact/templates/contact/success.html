@@ -17,11 +17,11 @@
         </p>
         
         <div class="space-x-4">
-            <a href="{{ url('pages:home') }}" 
+            <a href="{% url 'pages:home' %}" 
                class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
                 Return to Home
             </a>
-            <a href="{{ url('contact:contact_form') }}" 
+            <a href="{% url 'contact:contact_form' %}" 
                class="inline-block px-6 py-3 bg-gray-200 text-gray-700 font-medium rounded-lg hover:bg-gray-300 transition">
                 Send Another Message
             </a>

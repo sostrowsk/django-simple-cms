@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <a href="{{ url('pages:home') }}" class="text-2xl font-bold text-gray-900">
+                <a href="{% url 'pages:home' %}" class="text-2xl font-bold text-gray-900">
                     Django CMS
                 </a>
             </div>
@@ -11,17 +11,17 @@
             <!-- Navigation -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="{{ url('pages:home') }}" 
+                    <a href="{% url 'pages:home' %}" 
                        class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                         Home
                     </a>
                     {% for category in categories %}
-                    <a href="{{ url('pages:category_detail', kwargs={'slug': category.slug}) }}" 
+                    <a href="{% url 'pages:category_detail' slug=category.slug %}" 
                        class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                         {{ category.name }}
                     </a>
                     {% endfor %}
-                    <a href="{{ url('contact:contact_form') }}" 
+                    <a href="{% url 'contact:contact_form' %}" 
                        class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                         Contact
                     </a>
@@ -50,17 +50,17 @@
     <!-- Mobile menu -->
     <div class="md:hidden hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="{{ url('pages:home') }}" 
+            <a href="{% url 'pages:home' %}" 
                class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                 Home
             </a>
             {% for category in categories %}
-            <a href="{{ url('pages:category_detail', kwargs={'slug': category.slug}) }}" 
+            <a href="{% url 'pages:category_detail' slug=category.slug %}" 
                class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                 {{ category.name }}
             </a>
             {% endfor %}
-            <a href="{{ url('contact:contact_form') }}" 
+            <a href="{% url 'contact:contact_form' %}" 
                class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                 Contact
             </a>
